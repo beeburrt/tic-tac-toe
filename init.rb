@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
-require 'io/console'
-require_relative 'ttt'
+require "io/console"
+require_relative "string"
+require_relative "player"
 
-# must use parens here, see:
-# https://stackoverflow.com/questions/3170553/how-can-i-clear-the-terminal-in-ruby
-system('clear') || system('cls') # for portability (cls = Windows)
-# puts "\e[H\e[2J"
-puts "\n\tWelcome to Tic Tac Toe\n\n"
-
-rows, cols = $stdin.winsize # requires io/console
+def clear_screen
+  system('clear') || system('cls') # for portability (cls = Windows)
+end
+puts "\n\tWelcome to my Tic Tac Toe game!\n\n".yellow
+rows, cols = $stdin.winsize
+(rows - 5).times { puts "" }
+sleep 2

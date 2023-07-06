@@ -2,4 +2,4 @@
 
 require 'optparse'
 
-parser = OptionParser.new
+OptionParser.new
